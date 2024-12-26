@@ -13,6 +13,10 @@ A regression model was used to identify significant predictors of fatal crash ra
 - Older Drivers: Drivers aged 65 and above also contribute to higher fatality rates, though the impact is less pronounced than for younger drivers.
 - Non-Significant Factors: Variables such as weather, intersection type, hit-and-run involvement, and the day of the week did not show a significant relationship with fatality rates indicate their limited influence in this dataset.
 
+# Data Source: 
+- Data is provided by the Washington Traffic Safety Commission.
+- Data is processed, merged, and selected for usable variables in the model. 
+
 # Description Summary Table
 
 | **Statistic**      | **N**   | **Mean**  | **St. Dev.** | **Min** | **Max** |
