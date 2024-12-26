@@ -1,0 +1,34 @@
+A. Brief summary of the data:
+
+The dataset provides insights into various factors influencing fatal crashes from 2012 to 2022. The year column indicates that the data spans this period, with the average year close to 2017, and crashes tend to occur mid-year as suggested by the Crash.Month average of approximately June or July. The average number of fatalities per crash is slightly over one, with a maximum of five fatalities recorded in some cases. Weather conditions show significant variability, as evidenced by a high standard deviation, likely reflecting a wide range of weather scenarios affecting crash outcomes.
+
+Light conditions during crashes average near daylight or twilight, while intersection types vary greatly which suggests diverse accident circumstances. Substance-related factors like alcohol influence (dralc_inv) and speeding (speed_inv) appear moderately prevalent, occurring in roughly 30% of crashes. Other contributing factors, such as unlicensed drivers (unlic_inv) and wrong-way driving (wrongway), are less common but still significant given their potential impact on fatalities.
+
+Demographically, young drivers aged 15–24 (dr1524_inv) are associated with the highest crash involvement, making up around 26% of incidents, while older drivers also contribute to the statistics. This dataset underscores the importance of addressing substance use, young driver behavior, and environmental factors in efforts to reduce fatal crashes and improve road safety.
+
+B. Interpretation of the Regression Model:
+
+Regression Formula: 
+Numfatal=β0 + β1(weather) + β2(lightcond) + β3(spdlim) + β4(roadclass) + β5(dralc_inv) + β6(unlic_inv) + ϵ
+
+1.Intercept:
+- The intercept estimate is 1.027 suggests that when all predictors are set to zero, the predicted number of fatalities per accident is approximately 1.03.
+
+2.Significant Predictors:
+- dralc_inv (Driver with alcohol involved): A positive coefficient of 0.021 (p = 0.027) indicates that the presence of alcohol involvement increases the expected number of fatalities by 0.021 per crash, holding other variables constant.
+- did_inv (Driver impaired involved): A positive coefficient of 0.038 (p < 0.001) indicates that impairment significantly increases the number of fatalities by approximately 0.038 per crash.
+- dr1520_inv (Driver aged 15-20 involved): A highly significant positive coefficient of 0.085 (p < 0.001) suggests that the involvement of young drivers increases the expected fatalities by 0.085 per crash.
+- dr2124_inv (Driver aged 21-24 involved): A significant positive coefficient of 0.032 (p = 0.009) suggests that the presence of drivers in this age group increases fatalities by 0.032 per crash.
+
+3.Marginally Significant Predictors:
+- dr65_inv (Driver aged 65+ involved): The coefficient of 0.022 (p = 0.050) indicates a marginal increase in fatalities, likely influenced by age-related factors.
+
+4.Non-Significant Predictors:
+- Variables such as weather, intersection type, hit-and-run involvement, and day of the week did not have a statistically significant relationship with fatalities. This indicates that these factors, within this dataset, do not substantially explain the variability in fatalities.
+
+5.Model Fit:
+- The Multiple R-squared value is 0.0146 suggests that only 1.46% of the variability in the number of fatalities is explained by the predictors. 
+- The Adjusted R-squared is even lower (0.012) suggests the model's limited explanatory power.
+
+6.Residuals:
+- Residuals range from -0.221 to 3.898, indicating that while most predictions are close to the observed values, there are some outliers with much higher fatalities.
